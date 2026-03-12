@@ -5,15 +5,17 @@ export const siteConfig = {
   tagline: "Geleceğin Enerji Takibini Bugünden Tasarlıyoruz",
   description:
     "Meven Teknoloji olarak, doğalgaz sektöründe IoT tabanlı cihazlar, sensör sistemleri, gateway çözümleri, yapay zekâ destekli yazılımlar ve mobil/web platformları ile dijital dönüşümü destekliyoruz.",
-  logoUrl: "/images/logo.png",
-  heroImage1: "/images/hero-1.webp",
-  heroImage2: "/images/hero-2.webp",
+  logoUrl: "https://www.vaventeknoloji.com/_next/static/media/logo.0302029f.png",
+  heroImage1:
+    "https://www.vaventeknoloji.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-2.ab1c34c0.webp&w=1200&q=75",
+  heroImage2:
+    "https://www.vaventeknoloji.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.5a2e663a.webp&w=750&q=75",
 }
 
 export const navLinks = [
   { label: "Ana Sayfa", href: "#hero" },
-  { label: "Çözümlerimiz", href: "#solutions" },
   { label: "Hakkımızda", href: "#about" },
+  { label: "Çözümlerimiz", href: "#solutions" },
   { label: "Neden Meven", href: "#why-us" },
   { label: "Ekibimiz", href: "#team" },
   { label: "İletişim", href: "#contact" },
@@ -245,7 +247,7 @@ export const approaches: Approach[] = [
 
 export const contactInfo: ContactInfo = {
   phone: "+90 262 526 40 83",
-  email: "info@Meven.com.tr",
+  email: "info@meven.com.tr",
   address: "Sarımeşe Mah. Arpalık Sokak No: 9/1 Kartepe / KOCAELİ",
   workingHours: "Pazartesi - Cuma, 09:00 - 17:00",
 }

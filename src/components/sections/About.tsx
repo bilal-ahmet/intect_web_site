@@ -16,7 +16,7 @@ const About = () => (
         <div className="relative">
           <div className="relative rounded-2xl overflow-hidden shadow-xl">
             <Image
-              src="https://www.Meventeknoloji.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-2.ab1c34c0.webp&w=1200&q=75"
+                src="https://www.vaventeknoloji.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-2.ab1c34c0.webp&w=1200&q=75"
               alt="Meven Teknoloji - IoT Çözümleri"
               width={600}
               height={450}

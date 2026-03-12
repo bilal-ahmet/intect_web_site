@@ -1,4 +1,4 @@
-﻿"use client"
+﻿﻿"use client"
 
 import { useState } from "react"
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react"
@@ -134,7 +134,7 @@ const Contact = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Vaven Teknoloji Konum"
+                title="Meven Teknoloji Konum"
               />
             </div>
           </div>
