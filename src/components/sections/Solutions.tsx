@@ -71,10 +71,10 @@ const Solutions = () => (
               </ul>
 
               {/* Link */}
-              <div className="flex items-center gap-1 text-sky-600 text-sm font-semibold group-hover:gap-2 transition-all duration-200">
+              {/* <div className="flex items-center gap-1 text-sky-600 text-sm font-semibold group-hover:gap-2 transition-all duration-200">
                 Daha Fazla Bilgi
                 <ArrowRight size={14} />
-              </div>
+              </div> */}
             </div>
           )
         })}

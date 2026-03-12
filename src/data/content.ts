@@ -18,7 +18,7 @@ export const navLinks = [
   { label: "Çözümlerimiz", href: "#solutions" },
   { label: "Neden Meven", href: "#why-us" },
   { label: "Ekibimiz", href: "#team" },
-  { label: "İletişim", href: "#contact" },
+  // { label: "İletişim", href: "#contact" },
 ]
 
 export const heroStats = [
