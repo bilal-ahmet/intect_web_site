@@ -127,7 +127,7 @@ const Contact = () => {
             {/* Map placeholder */}
             <div className="rounded-2xl overflow-hidden h-40 bg-slate-100 relative">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12035.12!2d29.6937!3d40.7137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb44e4e16ede5b%3A0x0!2sKartepe%2C%20Kocaeli!5e0!3m2!1str!2str!4v1699000000000!5m2!1str!2str"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1009.0105268692839!2d30.053040819750603!3d40.726487073826895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb388570e2713d%3A0xbad9c98db8825168!2sVaven%20Kalibrasyon%20San.%20ve%20Tic.%20Ltd.%20%C5%9Eti.!5e0!3m2!1str!2str!4v1773330359679!5m2!1str!2str"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
