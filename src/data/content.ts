@@ -1,11 +1,20 @@
-﻿import type { Solution, Value, TeamSection, Stat, ContactInfo, TechStack, Approach } from "@/types"
+﻿import type {
+  Solution,
+  Value,
+  TeamSection,
+  Stat,
+  ContactInfo,
+  TechStack,
+  Approach,
+  ProcessStep,
+} from "@/types"
 
 export const siteConfig = {
   name: "Meven Teknoloji",
-  tagline: "Geleceğin Enerji Takibini Bugünden Tasarlıyoruz",
+  tagline: "IoT Cihazlarını Fikirden Üretime Geliştiriyoruz",
   description:
-    "Meven Teknoloji olarak, doğalgaz sektöründe IoT tabanlı cihazlar, sensör sistemleri, gateway çözümleri, yapay zekâ destekli yazılımlar ve mobil/web platformları ile dijital dönüşümü destekliyoruz.",
-  logoUrl: "https://www.vaventeknoloji.com/_next/static/media/logo.0302029f.png",
+    "Meven Teknoloji olarak, farklı sektörlere yönelik IoT cihazları, gömülü yazılım, haberleşme altyapıları ve bulut entegrasyonları geliştiriyor; fikirden sahaya kadar uçtan uca ürünleştirme süreçleri yürütüyoruz.",
+  logoUrl: "/images/logo.png",
   heroImage1:
     "https://www.vaventeknoloji.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-2.ab1c34c0.webp&w=1200&q=75",
   heroImage2:
@@ -22,88 +31,88 @@ export const navLinks = [
 ]
 
 export const heroStats = [
-  { value: "10+", label: "Yıllık Deneyim" },
+  { value: "5+", label: "Yıllık Deneyim" },
   { value: "99.9%", label: "Sistem Güvenilirliği" },
   { value: "24/7", label: "Teknik Destek" },
 ]
 
 export const solutions: Solution[] = [
   {
-    id: "gas-sensor",
-    title: "Gaz Takip Sensörü",
+    id: "device-design",
+    title: "Elektronik Donanım Tasarımı",
     description:
-      "Yüksek hassasiyetli, düşük enerji tüketimli sensörlerle olası sızıntıları anında tespit edin. Mevcut gaz sayaçlarını bir dakikadan kısa sürede akıllı hale getirir.",
+      "Saha koşullarına ve kullanım senaryolarına uygun IoT cihazlarını kart seviyesinden başlayarak tasarlıyor, ürün gereksinimlerini üretilebilir mimariye dönüştürüyoruz.",
     features: [
-      "Dakikalar içinde kurulum",
-      "10 yıla kadar pil ömrü",
-      "Altyapınıza tam uyum",
-      "Zorlu ortamlara dayanıklı",
-      "Maliyet tasarrufu sağlar",
+      "Kart ve bileşen seçimi",
+      "Sensör ve çevre birimi entegrasyonu",
+      "Düşük güç tüketimi kurgusu",
+      "Saha dayanımı odaklı tasarım",
+      "Üretime uygun mühendislik çıktıları",
     ],
     icon: "Gauge",
     color: "from-blue-500 to-blue-700",
   },
   {
-    id: "gateway",
-    title: "Gateway Cihazı",
+    id: "embedded-software",
+    title: "Gömülü Yazılım Geliştirme",
     description:
-      "IoT sisteminizin merkezinde yer alarak, sahadan gelen verileri bulut sistemlere güvenli şekilde aktarır. Tüm cihazlarla uyumlu çalışır.",
+      "Cihazların güvenilir, güncellenebilir ve uzun ömürlü çalışması için gömülü yazılım katmanını donanımla tam uyumlu biçimde geliştiriyoruz.",
     features: [
-      "Gerçek zamanlı veri aktarımı",
-      "NB-IoT, LTE-M, LoRaWAN, Wi-Fi desteği",
-      "Akıllı ağ yönetimi",
-      "Veri kaybına karşı dayanıklı",
-      "Uzaktan güncelleme imkânı",
+      "Firmware mimarisi ve sürümleme",
+      "Gerçek zamanlı kontrol senaryoları",
+      "Uzaktan güncelleme altyapısı",
+      "Hata toleranslı çalışma kurgusu",
+      "Donanım-yazılım birlikte doğrulama",
     ],
-    icon: "Router",
+    icon: "BarChart3",
     color: "from-emerald-500 to-emerald-700",
   },
   {
-    id: "communication",
-    title: "Haberleşme Modülü",
+    id: "connectivity",
+    title: "Bağlantı ve Haberleşme",
     description:
-      "NB-IoT, LoRaWAN, LTE-M gibi protokolleri destekleyen haberleşme modülleri ile kesintisiz veri iletimi sağlar.",
+      "Cihazların veri aktarımını güvenli ve kesintisiz sürdürebilmesi için kullanım senaryosuna uygun haberleşme altyapıları kurguluyoruz.",
     features: [
-      "NB-IoT protokol desteği",
-      "LoRaWAN entegrasyonu",
-      "LTE-M bağlantısı",
-      "Düşük güç tüketimi",
-      "Geniş kapsama alanı",
+      "Wi-Fi, BLE ve hücresel iletişim",
+      "Yerel ağ ve bulut entegrasyonu",
+      "Veri güvenliği ve paketleme",
+      "Uzaktan izleme için servis katmanı",
+      "İhtiyaca göre protokol seçimi",
     ],
-    icon: "Radio",
+    icon: "Router",
     color: "from-orange-500 to-orange-700",
   },
   {
-    id: "software",
-    title: "Doğalgaz Tüketim Takibi Yazılımı",
+    id: "prototype-production",
+    title: "Prototipten Seri Üretime",
     description:
-      "Web ve mobil tabanlı platformlarımız sayesinde tüketimi analiz edin, geçmiş verileri izleyin, anomali ve kaçakları tespit edin.",
+      "Prototip doğrulamasından fonksiyonel testlere ve üretim hazırlığına kadar ürünleşme sürecini aynı mühendislik çizgisinde ilerletiyoruz.",
     features: [
-      "Web ve mobil platform",
-      "Gerçek zamanlı izleme",
-      "Anomali ve kaçak tespiti",
-      "Geçmiş veri analizi",
-      "Yapay zekâ destekli raporlama",
+      "Hızlı prototipleme",
+      "Fonksiyonel test planları",
+      "Pilot üretim desteği",
+      "Mekanik uyumluluk kontrolleri",
+      "Seri üretim devreye alma",
     ],
-    icon: "BarChart3",
+    icon: "Radio",
     color: "from-purple-500 to-purple-700",
   },
 ]
 
 export const aboutContent = {
   badge: "Hakkımızda",
-  title: "Dijitalleşmenin Öncüsü",
-  subtitle: "Doğalgaz Sektöründe",
+  title: "Geliştirme Ortağınız",
+  subtitle: "Elektronik Ürün ve IoT Sistemlerinde",
   description:
-    "Doğalgaz sektöründe dijitalleşmenin öncüsü olan Meven, IoT destekli sayaç sistemleri, gaz algılama sensörleri, uzaktan veri iletim çözümleri ve yapay zekâ yazılımlarıyla sektöre değer katmaktadır.",
+    "Meven, elektronik ürün geliştirme ve IoT sistemleri alanında donanım, gömülü yazılım ve bağlantı katmanlarını aynı çatı altında birleştirerek uçtan uca mühendislik hizmeti sunar.",
   vision:
-    "Meven Teknoloji olarak, doğalgaz sektöründe dijitalleşmeyi hızlandırmak ve enerji yönetiminde yeni bir standart oluşturmak için çalışıyoruz. Geliştirdiğimiz IoT tabanlı sayaç sistemleri, gaz algılama sensörleri, haberleşme modülleri ve yapay zekâ destekli yazılımlar sayesinde; doğalgaz tüketiminin uzaktan, anlık ve güvenilir şekilde izlenmesini mümkün kılıyoruz.",
+    "Meven Teknoloji olarak hedefimiz, fikir aşamasındaki ihtiyaçları sahada çalışan, ölçeklenebilir ve üretilebilir IoT ürünlerine dönüştürmektir. Elektronik tasarım, gömülü yazılım, haberleşme ve doğrulama süreçlerini tek bir ekip yaklaşımıyla yöneterek müşterilerimize daha kısa geliştirme süresi ve daha öngörülebilir ürün kalitesi sağlıyoruz.",
   highlights: [
-    { label: "Verimlilik", description: "Enerji verimliliğini artırıyoruz" },
-    { label: "Güvenlik", description: "Altyapı güvenliğini güçlendiriyoruz" },
+    { label: "Ürünleşme", description: "Fikri üretilebilir cihaza dönüştürüyoruz" },
+    { label: "Güvenilirlik", description: "Sahada kararlı çalışan sistemler kuruyoruz" },
   ],
   stats: [
-    { value: "10+", label: "Yıllık Deneyim" },
+    { value: "5+", label: "Yıllık Deneyim" },
     { value: "99.9%", label: "Sistem Güvenilirliği" },
     { value: "24/7", label: "Teknik Destek" },
   ],
@@ -152,7 +161,7 @@ export const values: Value[] = [
 export const stats: Stat[] = [
   {
     id: "experience",
-    value: "10+",
+    value: "5+",
     label: "Yıllık Deneyim",
     description: "Enerji sektöründe birikmiş uzmanlık",
     icon: "Award",
@@ -174,9 +183,67 @@ export const stats: Stat[] = [
   {
     id: "focus",
     value: "100%",
-    label: "Enerji Sektörü Odaklı",
-    description: "Doğalgaz ve IoT teknolojileri uzmanlığı",
+    label: "IoT Ürün Geliştirme",
+    description: "Donanım ve yazılımı birlikte yöneten mühendislik yaklaşımı",
     icon: "Target",
+  },
+]
+
+export const processFlowIntro = {
+  badge: "Geliştirme Sürecimiz",
+  title: "Elektronik Ürün & Yazılım Geliştirme",
+  description:
+    "Proje geliştirme sürecimiz, her aşamada yüksek kaliteli ve verimli çözümler sunmak için titizlikle yönetilmektedir. İlk teklifin hazırlanmasından donanım ve yazılım geliştirme aşamalarına, prototip oluşturulmasından fonksiyonel testlerin yapılmasına kadar her adım mühendislik ekibimiz tarafından dikkatle planlanır ve uygulanır. Üretim ve mekanik montaj aşamaları tamamlandıktan sonra ürünümüz güvenli bir şekilde kargoya verilerek müşteriye ulaştırılır.",
+}
+
+export const processSteps: ProcessStep[] = [
+  {
+    id: "quote",
+    title: "Teklif",
+    description: "İhtiyaç analizi, kapsam ve teknik yol haritası hazırlanır.",
+    position: "top",
+  },
+  {
+    id: "hardware",
+    title: "Donanım Geliştirme",
+    description: "Elektronik kart mimarisi ve bileşen seçimleri netleştirilir.",
+    position: "bottom",
+  },
+  {
+    id: "software",
+    title: "Yazılım Geliştirme",
+    description: "Gömülü yazılım ve sistem davranışları geliştirilir.",
+    position: "top",
+  },
+  {
+    id: "prototype",
+    title: "Prototip",
+    description: "İlk çalışan numuneler üretilir ve doğrulanır.",
+    position: "bottom",
+  },
+  {
+    id: "functional-tests",
+    title: "Fonksiyonel Testler",
+    description: "Ürünün tüm senaryolarda güvenilirliği ölçülür.",
+    position: "top",
+  },
+  {
+    id: "production",
+    title: "Üretim",
+    description: "Onaylı tasarım üretim hattına alınır ve kalite kontrol yapılır.",
+    position: "bottom",
+  },
+  {
+    id: "mechanical-assembly",
+    title: "Mekanik Montaj",
+    description: "Ürün kasalama ve son montaj işlemleri tamamlanır.",
+    position: "top",
+  },
+  {
+    id: "shipping",
+    title: "Kargolama",
+    description: "Final kontrol sonrası ürünler güvenli biçimde sevk edilir.",
+    position: "bottom",
   },
 ]
 
@@ -209,16 +276,16 @@ export const teamSections: TeamSection[] = [
 
 export const techStacks: TechStack[] = [
   {
-    category: "Yazılım Geliştirme",
-    items: ["React", "Node.js", "Python"],
+    category: "Gömülü Yazılım",
+    items: ["C/C++", "RTOS", "Linux"],
   },
   {
-    category: "IoT & Sensör Teknolojileri",
-    items: ["LoRaWAN", "NB-IoT", "LTE-M"],
+    category: "Bağlantı Teknolojileri",
+    items: ["Wi-Fi", "Bluetooth LE", "LTE Cat-M1"],
   },
   {
-    category: "Üretim & Kalite",
-    items: ["ISO 9001", "CE", "FCC"],
+    category: "Üretim & Doğrulama",
+    items: ["Prototipleme", "Fonksiyonel Test", "Kalite Kontrol"],
   },
 ]
 
@@ -246,8 +313,8 @@ export const approaches: Approach[] = [
 ]
 
 export const contactInfo: ContactInfo = {
-  phone: "+90 262 526 40 83",
+  phone: "+90 535 972 96 15",
   email: "info@meven.com.tr",
-  address: "Sarımeşe Mah. Arpalık Sokak No: 9/1 Kartepe / KOCAELİ",
-  workingHours: "Pazartesi - Cuma, 09:00 - 17:00",
+  address: "Muallimköy Mah. Deniz Cad. No: 143/8 1.1.C1 Blok Zemin Kat, Bilişim Vadisi Gebze/Kocaeli",
+  workingHours: "Pazartesi - Cuma, 08:00 - 17:00",
 }

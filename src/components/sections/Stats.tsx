@@ -1,49 +1,67 @@
 ﻿"use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Award, CheckCircle, Headphones, Target } from "lucide-react"
-import { stats } from "@/data/content"
+import { ArrowRight } from "lucide-react"
+import { processFlowIntro, processSteps } from "@/data/content"
 
-const iconMap: Record<string, React.ElementType> = {
-  Award,
-  CheckCircle,
-  HeadphonesIcon: Headphones,
-  Target,
-}
+type Step = (typeof processSteps)[0]
 
-const StatItem = ({ stat }: { stat: (typeof stats)[0] }) => {
+const useReveal = (delay = 0) => {
   const [isVisible, setIsVisible] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
-  const Icon = iconMap[stat.icon] || Award
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.disconnect()
-        }
+        if (!entry.isIntersecting) return
+        setIsVisible(true)
+        observer.disconnect()
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     )
-
     if (ref.current) observer.observe(ref.current)
     return () => observer.disconnect()
   }, [])
 
+  return { ref, isVisible, delay }
+}
+
+const StepCard = ({ step, index }: { step: Step; index: number }) => {
+  const { ref, isVisible } = useReveal(index * 60)
+
   return (
     <div
       ref={ref}
-      className={`text-center transition-all duration-700 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      style={{ transitionDelay: `${index * 60}ms` }}
+      className={`h-full rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm shadow-xl shadow-slate-950/20 transition-all duration-700 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
       }`}
     >
-      <div className="inline-flex w-16 h-16 rounded-2xl bg-white/10 items-center justify-center mb-4 mx-auto">
-        <Icon size={28} className="text-sky-300" />
+      <div className="mb-2.5 inline-flex items-center gap-1.5 rounded-full border border-sky-400/20 bg-sky-400/10 px-2.5 py-1 text-xs font-semibold text-sky-300">
+        <span>{String(index + 1).padStart(2, "0")}</span>
+        <ArrowRight size={10} />
+        <span>Aşama</span>
       </div>
-      <div className="text-4xl sm:text-5xl font-extrabold text-white mb-2">{stat.value}</div>
-      <div className="text-sky-300 font-semibold mb-1">{stat.label}</div>
-      <div className="text-slate-400 text-sm">{stat.description}</div>
+      <h3 className="text-sm font-bold text-white mb-2 leading-snug">{step.title}</h3>
+      <p className="text-xs leading-relaxed text-slate-300">{step.description}</p>
+    </div>
+  )
+}
+
+const TimelineDot = ({ index }: { index: number }) => {
+  const { ref, isVisible } = useReveal(index * 60)
+
+  return (
+    <div
+      ref={ref}
+      style={{ transitionDelay: `${index * 60}ms` }}
+      className={`relative z-10 flex items-center justify-center transition-all duration-500 ${
+        isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
+      }`}
+    >
+      <div className="flex h-10 w-10 items-center justify-center rounded-full border-4 border-sky-300/70 bg-slate-950 shadow-[0_0_0_5px_rgba(56,189,248,0.12)]">
+        <div className="h-3 w-3 rounded-full bg-sky-300" />
+      </div>
     </div>
   )
 }
@@ -64,40 +82,69 @@ const Stats = () => (
       <div className="text-center mb-16">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-sm font-medium mb-4">
           <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
-          Başarılarımız
+          {processFlowIntro.badge}
         </div>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
-          Rakamlarla{" "}
-          <span className="gradient-text">Meven Teknoloji</span>
+          <span className="gradient-text">{processFlowIntro.title}</span>
         </h2>
-        <p className="text-slate-400 max-w-xl mx-auto">
-          Enerji sektöründe yarattığımız değeri somut verilerle paylaşıyoruz.
+        <p className="text-slate-400 max-w-4xl mx-auto leading-relaxed">
+          {processFlowIntro.description}
         </p>
       </div>
 
-      {/* Stats grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-        {stats.map((stat) => (
-          <StatItem key={stat.id} stat={stat} />
+      {/* Mobile */}
+      <div className="md:hidden space-y-4">
+        {processSteps.map((step, index) => (
+          <StepCard key={step.id} step={step} index={index} />
         ))}
       </div>
 
-      {/* Divider */}
-      <div className="mt-20 border-t border-slate-700/50 pt-12">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-          {[
-            { label: "React, Node.js, Python", desc: "Yazılım Teknolojileri" },
-            { label: "NB-IoT, LoRaWAN, LTE-M", desc: "Haberleşme Protokolleri" },
-            { label: "ISO 9001, CE, FCC", desc: "Sertifikasyon Standartları" },
-          ].map((item) => (
-            <div key={item.label} className="group">
-              <div className="text-sky-400 font-bold text-lg mb-1 group-hover:text-sky-300 transition-colors">
-                {item.label}
-              </div>
-              <div className="text-slate-500 text-sm">{item.desc}</div>
-            </div>
+      {/* Desktop: 3 explicit rows so cards expand naturally */}
+      <div className="relative hidden md:block">
+        {/* Row 1 — top cards */}
+        <div className="grid grid-cols-8 gap-x-3">
+          {processSteps.map((step, index) =>
+            step.position === "top" ? (
+              <StepCard key={step.id} step={step} index={index} />
+            ) : (
+              <div key={step.id} />
+            )
+          )}
+        </div>
+
+        {/* Row 2 — timeline dots */}
+        <div className="relative grid grid-cols-8 gap-x-3 py-5">
+          <div className="absolute left-5 right-5 top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-sky-400/10 via-sky-400/60 to-sky-400/10" />
+          {processSteps.map((step, index) => (
+            <TimelineDot key={step.id} index={index} />
           ))}
         </div>
+
+        {/* Row 3 — bottom cards */}
+        <div className="grid grid-cols-8 gap-x-3">
+          {processSteps.map((step, index) =>
+            step.position === "bottom" ? (
+              <StepCard key={step.id} step={step} index={index} />
+            ) : (
+              <div key={step.id} />
+            )
+          )}
+        </div>
+      </div>
+
+      <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-4">
+        {[
+          "Tekliften sevkiyata kadar tek ekip koordinasyonu",
+          "Donanım, yazılım ve üretim doğrulaması aynı akışta ilerler",
+          "Her aşamada izlenebilirlik ve planlı geçiş noktaları uygulanır",
+        ].map((item) => (
+          <div
+            key={item}
+            className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-sm text-slate-300 backdrop-blur-sm"
+          >
+            {item}
+          </div>
+        ))}
       </div>
     </div>
   </section>

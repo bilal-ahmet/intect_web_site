@@ -134,7 +134,7 @@ const WhyUs = () => (
                   strokeWidth="8"
                   fill="none"
                   strokeDasharray="251.3"
-                  strokeDashoffset="25"
+                  strokeDashoffset="0"
                   strokeLinecap="round"
                 />
                 <defs>
@@ -145,14 +145,14 @@ const WhyUs = () => (
                 </defs>
               </svg>
               <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="text-3xl font-extrabold text-white">90%</span>
+                <span className="text-3xl font-extrabold text-white">%100</span>
                 <span className="text-sky-400 text-xs mt-1">Müşteri Memnuniyeti</span>
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               {[
-                { value: "10+", label: "Yıllık Deneyim" },
+                { value: "5+", label: "Yıllık Deneyim" },
                 { value: "99.9%", label: "Sistem Uptime" },
                 { value: "24/7", label: "Destek" },
                 { value: "4", label: "Ürün Ailesi" },

@@ -44,13 +44,13 @@ const Hero = () => {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-sm font-medium mb-6">
               <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
-              IoT Tabanlı Enerji Takibi
+              Elektronik Ürün Geliştirme
             </div>
 
             <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold text-white leading-tight mb-6">
-              Geleceğin{" "}
-              <span className="gradient-text">Enerji Takibini</span>{" "}
-              Bugünden Tasarlıyoruz
+              IoT Cihazlarını{" "}
+              <span className="gradient-text">Fikirden Üretime</span>{" "}
+              Geliştiriyoruz
             </h1>
 
             <p className="text-lg text-slate-400 leading-relaxed mb-8 max-w-xl">
@@ -82,7 +82,7 @@ const Hero = () => {
             </div>
 
             {/* Stats */}
-            <div className="flex flex-wrap gap-6">
+            {/* <div className="flex flex-wrap gap-6">
               {heroStats.map((stat) => {
                 const Icon = iconMap[stat.label] || Zap
                 return (
@@ -97,7 +97,7 @@ const Hero = () => {
                   </div>
                 )
               })}
-            </div>
+            </div> */}
           </div>
 
           {/* Right — Image */}
@@ -124,7 +124,7 @@ const Hero = () => {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-slate-800">Güvenli Sistem</div>
-                  <div className="text-xs text-slate-500">99.9% Uptime</div>
+                  <div className="text-xs text-slate-500">Sahaya Hazır Tasarım</div>
                 </div>
               </div>
 
@@ -132,9 +132,9 @@ const Hero = () => {
               <div className="absolute -bottom-4 -right-4 bg-slate-800 rounded-xl px-4 py-3 shadow-xl border border-slate-700">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-                  <span className="text-emerald-400 text-xs font-semibold">Gerçek Zamanlı İzleme</span>
+                  <span className="text-emerald-400 text-xs font-semibold">Aktif Geliştirme Süreci</span>
                 </div>
-                <div className="text-white text-sm font-bold mt-1">Aktif Sensörler</div>
+                <div className="text-white text-sm font-bold mt-1">Doğrulanan Prototipler</div>
               </div>
             </div>
 

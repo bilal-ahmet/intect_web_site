@@ -20,12 +20,12 @@ const Solutions = () => (
           Çözümlerimiz
         </div>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">
-          Kapsamlı{" "}
-          <span className="gradient-text">IoT Çözümleri</span>
+          Uçtan Uca{" "}
+          <span className="gradient-text">IoT Üretim Yetkinlikleri</span>
         </h2>
         <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed">
-          Geleneksel gaz sayaçlarını akıllı ve bağlı cihazlara dönüştürün. Sensörden yazılıma kadar
-          uçtan uca çözümler sunuyoruz.
+          Belirli bir ürün satmaktan çok, ihtiyaca özel IoT cihazlarını tasarlayan ve üretime
+          hazırlayan bir mühendislik ekibi olarak çalışıyoruz.
         </p>
       </div>
 
@@ -91,8 +91,8 @@ const Solutions = () => (
             Projenizi Hayata Geçirelim
           </h3>
           <p className="text-slate-400 mb-6 max-w-xl mx-auto">
-            Geliştirdiğimiz çözümler hakkında daha fazla bilgi almak veya projenizi
-            görüşmek için bizimle iletişime geçin.
+            Yeni bir cihaz fikrini sahaya hazır bir ürüne dönüştürmek için teknik ekibimizle
+            proje detaylarını birlikte değerlendirelim.
           </p>
           <a
             href="#contact"

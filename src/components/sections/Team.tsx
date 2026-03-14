@@ -22,7 +22,7 @@ const Team = () => (
         </h2>
         <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed">
           Deneyimli mühendislerimiz, yenilikçi yöneticilerimiz ve uzman üretim ekibimizle
-          enerji sektöründe dijital dönüşümün öncülüğünü yapıyoruz.
+          elektronik ürün geliştirme süreçlerini disiplinli ve ölçeklenebilir biçimde yönetiyoruz.
         </p>
       </div>
 
@@ -91,8 +91,7 @@ const Team = () => (
         {/* Quote */}
         <div className="mt-8 pt-8 border-t border-slate-700/50 text-center">
           <p className="text-slate-400 italic">
-            "Ekibimiz, IoT teknolojileri, yapay zeka ve makine öğrenmesi alanlarında sürekli
-            araştırma geliştirme çalışmaları yürütmektedir."
+            &ldquo;Ekibimiz elektronik ürün geliştirme ve yazılım alanlarında sürekli araştırma geliştirme çalışmaları yürütmektedir.&rdquo;
           </p>
           <p className="text-sky-400 text-sm font-semibold mt-2">— Meven Teknoloji Ar-Ge Ekibi</p>
         </div>

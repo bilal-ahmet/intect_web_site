@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { navLinks, siteConfig } from "@/data/content"
+import Image from "next/image"
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -51,8 +52,15 @@ const Navbar = () => {
             aria-label="Ana sayfaya git"
           >
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-sky-400 to-cyan-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">V</span>
+              <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-white/5 ring-1 ring-white/10">
+                <Image
+                  src={siteConfig.logoUrl}
+                  alt={`${siteConfig.name} logosu`}
+                  width={40}
+                  height={40}
+                  className="h-8 w-8 object-contain"
+                  priority
+                />
               </div>
               <span className="text-white font-bold text-lg tracking-tight group-hover:text-sky-400 transition-colors">
                 {siteConfig.name}

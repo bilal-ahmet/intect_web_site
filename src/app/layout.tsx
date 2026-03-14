@@ -8,15 +8,15 @@ const geistSans = Geist({
 })
 
 export const metadata: Metadata = {
-  title: "Meven Teknoloji | IoT Tabanlı Enerji Takibi",
+  title: "Meven Teknoloji | IoT Cihaz Geliştirme ve Üretim",
   description:
-    "Meven Teknoloji, doğalgaz sektöründe IoT tabanlı cihazlar, sensör sistemleri, gateway çözümleri ve yapay zekâ destekli yazılımlarla dijital dönüşümü destekliyor.",
+    "Meven Teknoloji, IoT cihaz geliştirme, gömülü yazılım, elektronik tasarım ve ürünleştirme süreçlerini uçtan uca yöneten mühendislik şirketidir.",
   keywords:
-    "Meven Teknoloji, IoT, doğalgaz sensörü, gaz takip, gateway, haberleşme modülü, enerji takibi, NB-IoT, LoRaWAN",
+    "Meven Teknoloji, IoT cihaz, elektronik tasarım, gömülü yazılım, ürün geliştirme, prototipleme, haberleşme modülü",
   openGraph: {
-    title: "Meven Teknoloji | IoT Tabanlı Enerji Takibi",
+    title: "Meven Teknoloji | IoT Cihaz Geliştirme ve Üretim",
     description:
-      "Geleceğin enerji takibini bugünden tasarlıyoruz. IoT tabanlı doğalgaz izleme çözümleri.",
+      "IoT cihazlarını fikirden üretime geliştiren, donanım ve yazılımı tek çatı altında buluşturan mühendislik yaklaşımı.",
     locale: "tr_TR",
     type: "website",
   },
@@ -33,5 +33,5 @@ export default function RootLayout({
         {children}
       </body>
     </html>
-  );
+  )
 }

@@ -2,6 +2,7 @@
 
 import { Mail, Phone, MapPin, Linkedin, Twitter, Github, Zap } from "lucide-react"
 import { contactInfo, siteConfig } from "@/data/content"
+import Image from "next/image"
 
 const Footer = () => {
   const handleNavClick = (id: string) => {
@@ -19,10 +20,10 @@ const Footer = () => {
   ]
 
   const solutionLinks = [
-    { label: "Gaz Takip Sensörü", id: "solutions" },
-    { label: "Gateway Cihazı", id: "solutions" },
-    { label: "Haberleşme Modülü", id: "solutions" },
-    { label: "Tüketim Takibi Yazılımı", id: "solutions" },
+    { label: "Elektronik Donanım Tasarımı", id: "solutions" },
+    { label: "Gömülü Yazılım Geliştirme", id: "solutions" },
+    { label: "Bağlantı ve Haberleşme", id: "solutions" },
+    { label: "Prototipten Seri Üretime", id: "solutions" },
   ]
 
   return (
@@ -33,17 +34,23 @@ const Footer = () => {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 bg-gradient-to-br from-sky-400 to-cyan-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">V</span>
+              <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-white/5 ring-1 ring-white/10">
+                <Image
+                  src={siteConfig.logoUrl}
+                  alt={`${siteConfig.name} logosu`}
+                  width={44}
+                  height={44}
+                  className="h-9 w-9 object-contain"
+                />
               </div>
               <span className="text-white font-bold text-lg">{siteConfig.name}</span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              Geleceğin enerji takibini bugünden tasarlıyor ve üretiyoruz. IoT tabanlı
-              doğalgaz izleme çözümleri.
+              Fikir aşamasından prototipe, üretim doğrulamasından teslimata kadar IoT cihazları
+              için uçtan uca geliştirme ve ürünleştirme desteği sunuyoruz.
             </p>
             {/* Social icons */}
-            <div className="flex gap-3">
+            {/* <div className="flex gap-3">
               {[
                 { Icon: Linkedin, label: "LinkedIn", href: "#" },
                 { Icon: Twitter, label: "Twitter", href: "#" },
@@ -59,7 +66,7 @@ const Footer = () => {
                   <Icon size={16} className="text-slate-400 hover:text-white" />
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Company links */}

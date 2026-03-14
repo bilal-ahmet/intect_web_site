@@ -30,6 +30,13 @@ export interface Stat {
   icon: string
 }
 
+export interface ProcessStep {
+  id: string
+  title: string
+  description: string
+  position: "top" | "bottom"
+}
+
 export interface ContactInfo {
   phone: string
   email: string

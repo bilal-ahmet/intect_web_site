@@ -45,28 +45,25 @@ const Contact = () => {
       icon: Phone,
       title: "Telefon",
       value: contactInfo.phone,
-      sub: "Pazartesi - Cuma, 09:00 - 17:00",
       href: `tel:${contactInfo.phone.replace(/\s/g, "")}`,
     },
     {
       icon: Mail,
       title: "E-posta",
       value: contactInfo.email,
-      sub: "24 saat içinde yanıtlıyoruz",
       href: `mailto:${contactInfo.email}`,
     },
     {
       icon: MapPin,
       title: "Adres",
       value: contactInfo.address,
-      sub: "Önceden randevu alınız",
       href: "https://maps.google.com/?q=Kartepe+Kocaeli",
     },
     {
       icon: Clock,
       title: "Çalışma Saatleri",
       value: "Pazartesi - Cuma",
-      sub: "09:00 - 17:00",
+      sub: "08:00 - 17:00",
       href: null,
     },
   ]
@@ -210,7 +207,7 @@ const Contact = () => {
                     />
                   </div>
 
-                  <div>
+                  {/* <div>
                     <label className="block text-sm font-medium text-slate-700 mb-1.5" htmlFor="subject">
                       Konu *
                     </label>
@@ -223,13 +220,13 @@ const Contact = () => {
                       className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent text-sm transition-all"
                     >
                       <option value="">Konu Seçiniz</option>
-                      <option value="gaz-sensor">Gaz Takip Sensörü</option>
-                      <option value="gateway">Gateway Cihazı</option>
-                      <option value="haberlesme">Haberleşme Modülü</option>
-                      <option value="yazilim">Takip Yazılımı</option>
+                      <option value="device-design">Elektronik Donanım Tasarımı</option>
+                      <option value="embedded-software">Gömülü Yazılım Geliştirme</option>
+                      <option value="connectivity">Bağlantı ve Haberleşme</option>
+                      <option value="prototype-production">Prototipten Seri Üretime</option>
                       <option value="diger">Diğer</option>
                     </select>
-                  </div>
+                  </div> */}
 
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-1.5" htmlFor="message">

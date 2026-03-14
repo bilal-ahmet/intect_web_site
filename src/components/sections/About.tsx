@@ -1,17 +1,11 @@
-﻿import { CheckCircle, TrendingUp, ShieldCheck, Award, Clock, Activity } from "lucide-react"
+﻿import { TrendingUp, ShieldCheck, Activity } from "lucide-react"
 import { aboutContent } from "@/data/content"
 import Image from "next/image"
 
-const statIconMap: Record<string, React.ElementType> = {
-  "Yıllık Deneyim": Award,
-  "Sistem Güvenilirliği": ShieldCheck,
-  "Teknik Destek": Clock,
-}
-
 const About = () => (
-  <section id="about" className="py-24 bg-white">
+  <section id="about" className="pt-24 pb-32 bg-white">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
         {/* Left — Images */}
         <div className="relative">
           <div className="relative rounded-2xl overflow-hidden shadow-xl">
@@ -27,7 +21,7 @@ const About = () => (
 
           {/* Stats card overlay */}
           <div className="absolute -bottom-8 -right-8 bg-slate-900 rounded-2xl p-6 shadow-2xl text-center min-w-40">
-            <div className="text-3xl font-extrabold gradient-text mb-1">10+</div>
+            <div className="text-3xl font-extrabold gradient-text mb-1">5+</div>
             <div className="text-slate-400 text-sm">Yıllık Sektör</div>
             <div className="text-slate-400 text-sm">Deneyimi</div>
           </div>
@@ -50,7 +44,7 @@ const About = () => (
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight mb-2">
             {aboutContent.subtitle}
           </h2>
-          <h2 className="text-3xl sm:text-4xl font-extrabold gradient-text mb-6">
+          <h2 className="text-3xl sm:text-4xl font-extrabold gradient-text pb-2 mb-6">
             {aboutContent.title}
           </h2>
 
@@ -70,7 +64,7 @@ const About = () => (
                 className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl"
               >
                 <div className="w-8 h-8 bg-sky-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-                  {item.label === "Verimlilik" ? (
+                  {item.label === "Ürünleşme" ? (
                     <TrendingUp size={16} className="text-sky-600" />
                   ) : (
                     <ShieldCheck size={16} className="text-sky-600" />
@@ -85,7 +79,7 @@ const About = () => (
           </div>
 
           {/* Stats */}
-          <div className="flex flex-wrap gap-6 pt-6 border-t border-slate-100">
+          {/* <div className="flex flex-wrap gap-6 pt-6 border-t border-slate-100">
             {aboutContent.stats.map((stat) => {
               const Icon = statIconMap[stat.label] || CheckCircle
               return (
@@ -100,7 +94,7 @@ const About = () => (
                 </div>
               )
             })}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
