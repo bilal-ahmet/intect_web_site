@@ -55,47 +55,6 @@ const Team = () => (
           )
         })}
       </div>
-
-      {/* Tech Stacks */}
-      <div className="bg-slate-900 rounded-2xl p-8 sm:p-12">
-        <div className="text-center mb-10">
-          <h3 className="text-2xl font-bold text-white mb-2">
-            İnovasyon & Teknoloji
-          </h3>
-          <p className="text-slate-400 text-sm">
-            Ekibimizin kullandığı teknolojiler ve geliştirdiği yenilikçi çözümler.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {techStacks.map((stack) => (
-            <div
-              key={stack.category}
-              className="bg-slate-800/60 rounded-xl p-6 hover:bg-slate-700/60 transition-colors"
-            >
-              <h4 className="text-sky-400 font-semibold text-sm mb-4">{stack.category}</h4>
-              <div className="flex flex-wrap gap-2">
-                {stack.items.map((item) => (
-                  <span
-                    key={item}
-                    className="px-3 py-1.5 bg-sky-500/10 border border-sky-500/20 text-sky-300 text-xs font-medium rounded-lg"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Quote */}
-        <div className="mt-8 pt-8 border-t border-slate-700/50 text-center">
-          <p className="text-slate-400 italic">
-            &ldquo;Ekibimiz elektronik ürün geliştirme ve yazılım alanlarında sürekli araştırma geliştirme çalışmaları yürütmektedir.&rdquo;
-          </p>
-          <p className="text-sky-400 text-sm font-semibold mt-2">— Meven Teknoloji Ar-Ge Ekibi</p>
-        </div>
-      </div>
     </div>
   </section>
 )
